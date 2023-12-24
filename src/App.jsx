@@ -7,16 +7,16 @@ import Dashboard from "./components/Dashboard.jsx";
 
 function App() {
   return (
-    <AuthProvider>
-      <BrowserRouter>
+    <BrowserRouter>
+      <AuthProvider>
         <Routes>
           <Route path="/login" Component={Login} />
           <Route element={<ProtectedRoute />}>
             <Route path="/dashboard" Component={Dashboard} />
           </Route>
         </Routes>
-      </BrowserRouter>
-    </AuthProvider>
+      </AuthProvider>
+    </BrowserRouter>
   );
 }
 

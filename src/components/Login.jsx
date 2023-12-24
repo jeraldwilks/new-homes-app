@@ -27,10 +27,6 @@ export default function Login() {
     const data = new FormData(event.currentTarget);
     const response = await login(data.get("email"), data.get("password"));
     setError(response);
-    // console.log({
-    //   email: data.get("email"),
-    //   password: data.get("password"),
-    // });
   };
   if (user) {
     nav("/dashboard");
