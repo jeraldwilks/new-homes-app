@@ -4,12 +4,14 @@ import Login from "./components/Login.jsx";
 import AuthProvider from "./providers/AuthProvider.jsx";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import Dashboard from "./components/Dashboard.jsx";
+// import BuildingList from "./components/BuildingList.jsx";
 
 function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
         <Routes>
+          {/* <Route path="/test" Component={BuildingList} /> */}
           <Route path="/login" Component={Login} />
           <Route element={<ProtectedRoute />}>
             <Route path="/dashboard" Component={Dashboard} />
