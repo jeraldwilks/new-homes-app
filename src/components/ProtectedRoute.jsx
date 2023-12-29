@@ -1,6 +1,7 @@
 import React from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import { useAuth } from "../providers/AuthProvider";
+import MyAppBar from "./MyAppBar";
 
 const ProtectedRoute = () => {
   const nav = useNavigate();
@@ -11,7 +12,12 @@ const ProtectedRoute = () => {
   if (!user) {
     nav("/login");
   } else {
-    return <Outlet />;
+    return (
+      <>
+        <MyAppBar />
+        <Outlet />
+      </>
+    );
   }
 };
 

@@ -4,7 +4,7 @@ import { db } from "../providers/FirebaseProvider";
 import {
   Box,
   Button,
-  Container,
+  // Container,
   CssBaseline,
   FormControl,
   FormLabel,
@@ -76,7 +76,7 @@ const AddBuilding = () => {
         <Box
           sx={{
             width: 600,
-            marginTop: 3,
+            marginTop: 8,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",

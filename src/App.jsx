@@ -4,6 +4,7 @@ import Login from "./components/Login.jsx";
 import AuthProvider from "./providers/AuthProvider.jsx";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import Dashboard from "./components/Dashboard.jsx";
+import AddBuilding from "./components/AddBuilding.jsx";
 // import BuildingList from "./components/BuildingList.jsx";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path="/login" Component={Login} />
           <Route element={<ProtectedRoute />}>
             <Route path="/dashboard" Component={Dashboard} />
+            <Route path="/addbuilding" Component={AddBuilding} />
           </Route>
         </Routes>
       </AuthProvider>
