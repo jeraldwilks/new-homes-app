@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { CssBaseline } from "@mui/material";
+import { Button, CssBaseline } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { db } from "../providers/FirebaseProvider";
 import { collection, getDocs } from "firebase/firestore";
@@ -20,11 +20,15 @@ const ListBuildings = () => {
           id: doc.id,
         }));
         setBuildings(newData);
-        console.log(buildings, newData);
+        // console.log(buildings, newData);
       });
     };
     getBuildings();
   }, []);
+
+  const editBuilding = (building) => {
+    nav("/editbuilding/" + building.id);
+  };
 
   const columns = [
     { field: "name", headerName: "Name", width: 240 },
@@ -45,20 +49,20 @@ const ListBuildings = () => {
     },
     {
       field: "Edit",
-      //   renderCell: (cellValues) => {
-      //     return (
-      //       <Button
-      //         variant="contained"
-      //         color="primary"
-      //         onClick={() => {
-      //           editProduct(cellValues);
-      //         }
-      //     }
-      //       >
-      //         Edit
-      //       </Button>
-      //     );
-      //   },
+      renderCell: (cellValues) => {
+        return (
+          <Button
+            variant="contained"
+            color="primary"
+            size="small"
+            onClick={() => {
+              editBuilding(cellValues);
+            }}
+          >
+            Edit
+          </Button>
+        );
+      },
     },
   ];
   return (
