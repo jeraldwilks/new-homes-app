@@ -4,8 +4,8 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
+// import IconButton from "@mui/material/IconButton";
+// import MenuIcon from "@mui/icons-material/Menu";
 import { useAuth } from "../providers/AuthProvider";
 import { useNavigate } from "react-router-dom";
 
@@ -36,7 +36,12 @@ export default function MyAppBar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Map
           </Typography>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography
+            onClick={() => nav("/listbuildings")}
+            variant="h6"
+            component="div"
+            sx={{ flexGrow: 1 }}
+          >
             List Buildings
           </Typography>
           <Typography
